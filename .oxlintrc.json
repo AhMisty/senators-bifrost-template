@@ -1,0 +1,26 @@
+{
+  "excludeFiles": ["out/*", "node_modules/*"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn",
+    "style": "off",
+    "pedantic": "off",
+    "perf": "warn"
+  },
+  "rules": {
+    "no-console": "allow",
+    "no-debugger": "error",
+    "no-unused-vars": "warn",
+    "no-undef": "allow",
+    "no-empty": "warn",
+    "no-duplicate-case": "warn",
+    "no-dupe-keys": "warn",
+    "eqeqeq": ["error", "always"],
+    "no-await-in-loop": "allow"
+  },
+  "globals": {
+    "fetch": "readonly",
+    "defineProps": "readonly",
+    "chrome": "readonly"
+  }
+}

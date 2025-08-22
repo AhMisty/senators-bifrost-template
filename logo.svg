@@ -1,0 +1,15 @@
+<svg
+  viewBox="0 0 570 570"
+  fill="rgb(64,158,255)"
+  clip-rule="evenodd"
+  fill-rule="evenodd"
+  image-rendering="optimizeQuality"
+  shape-rendering="geometricPrecision"
+  text-rendering="geometricPrecision"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="m285,570 l-35,-250 l35,-100 l35,100 l-35,250 z"></path>
+  <path d="m75,210 l100,-35 l100,35 l-100,35 l-100,-35 z"></path>
+  <path d="m285,0 l35,100 l-35,100 l-35,-100 l35,-100 z"></path>
+  <path d="m495,210 l-100,35 l-100,-35 l100,-35 l100,35 z"></path>
+</svg>

@@ -1,0 +1,63 @@
+{
+  "name": "@senators/bifrost-template",
+  "version": "1.0.0",
+  "private": false,
+  "description": "A template for Bifrost, making your interstellar journey easier!",
+  "keywords": [
+    "@senators/bifrost-template",
+    "senators",
+    "bifrost",
+    "ogame"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/AhMisty/senators-bifrost-template",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AhMisty/senators-bifrost-template"
+  },
+  "bugs": {
+    "url": "https://github.com/AhMisty/senators-bifrost-template/issues",
+    "email": "AhMisty@outlook.com"
+  },
+  "author": "AhMisty",
+  "type": "module",
+  "files": [
+    "./out",
+    "./docs",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./out/main.d.ts",
+      "default": "./out/main.js"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "git-cz": "latest",
+    "npm-run-all2": "latest",
+    "oxlint": "latest",
+    "prettier": "next",
+    "rolldown": "nightly",
+    "rolldown-plugin-dts": "latest"
+  },
+  "scripts": {
+    "start-ts": "node ./src/main.ts",
+    "start-js": "node ./out/main.js",
+    "start": "run-s build start-js",
+    "lint": "oxlint . --fix --ignore-path .gitignore",
+    "format": "prettier --write package.json rolldown.config.ts .prettierrc.json .oxlintrc.json ./src",
+    "check": "run-s lint format",
+    "git-add": "git add .",
+    "git-commit": "git-cz",
+    "git-push": "git push",
+    "git": "run-s check git-add git-commit git-push",
+    "build-only": "rolldown -c rolldown.config.ts",
+    "build": "run-s check build-only",
+    "push": "run-s build && npm publish --access public"
+  },
+  "dependencies": {
+    "@senators/bifrost": "latest"
+  }
+}
