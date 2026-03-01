@@ -39,7 +39,7 @@
     "npm-run-all2": "latest",
     "oxlint": "latest",
     "prettier": "next",
-    "rolldown": "nightly",
+    "rolldown": "latest",
     "rolldown-plugin-dts": "latest"
   },
   "scripts": {
