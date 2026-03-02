@@ -1,6 +1,6 @@
 {
   "name": "@senators/bifrost-template",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "private": false,
   "description": "A template for Bifrost, making your interstellar journey easier!",
   "keywords": [
@@ -37,8 +37,8 @@
     "@types/node": "latest",
     "git-cz": "latest",
     "npm-run-all2": "latest",
+    "oxfmt": "latest",
     "oxlint": "latest",
-    "prettier": "next",
     "rolldown": "latest",
     "rolldown-plugin-dts": "latest"
   },
@@ -47,8 +47,8 @@
     "start-js": "node ./out/main.js",
     "start": "run-s build start-js",
     "lint": "oxlint . --fix --ignore-path .gitignore",
-    "format": "prettier --write package.json rolldown.config.ts .prettierrc.json .oxlintrc.json ./src",
-    "check": "run-s lint format",
+    "fmt": "oxfmt . --write --ignore-path .gitignore",
+    "check": "run-s lint fmt",
     "git-add": "git add .",
     "git-commit": "git-cz",
     "git-push": "git push",

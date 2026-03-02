@@ -40,6 +40,7 @@ pnpm install
 ### 编写脚本
 
 在默认入口是 `src/main.ts`，你可以参照 `src/example` 目录下的示例，直接编辑 `src/main.ts` 文件。
+创建 `Operator` 时，请先创建 `Config` 实例，并作为第 5 个参数传入。
 
 ### 运行脚本
 
@@ -70,7 +71,7 @@ npm run build
 npm run lint
 
 # 格式化代码
-npm run format
+npm run fmt
 ```
 
 ## 📜 许可证

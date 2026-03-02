@@ -17,7 +17,9 @@ export default defineConfig([
         dir: './out',
         format: 'esm',
         minify: true,
-        legalComments: 'none',
+        comments: {
+          legal: false,
+        },
         sourcemap: false,
       },
     ],
