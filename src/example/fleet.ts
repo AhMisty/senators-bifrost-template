@@ -42,8 +42,9 @@ operator.onSendFleetStep3Invalid = async (operator, fleet, allyContent) => {
 const sendFleet = async () => {
   // 执行舰队任务
   console.log(`执行舰队任务 ${new Date().toLocaleTimeString()}`)
-  await operator.sendFleet(fleet)
-  console.log('舰队已派出！')
+  if (await operator.sendFleet(fleet)) {
+    console.log('舰队已派出！')
+  }
 }
 
 // 先执行一次
