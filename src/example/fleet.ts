@@ -27,17 +27,27 @@ const fleet = new Fleet({
   ships, // 舰船配置
 })
 
-// 执行舰队任务
-console.log('发送舰队中...')
-await operator.sendFleet(fleet)
-console.log('舰队已派出！')
+// 监听发送舰队错误事件
+operator.onSendFleetStep1Invalid = async (operator, fleet, allyContent) => {
+  console.error(`步骤1出现错误: ${allyContent}`)
+}
+operator.onSendFleetStep2Invalid = async (operator, fleet, allyContent) => {
+  console.error(`步骤2出现错误: ${allyContent}`)
+}
+operator.onSendFleetStep3Invalid = async (operator, fleet, allyContent) => {
+  console.error(`步骤3出现错误: ${allyContent}`)
+}
 
-// 定时执行（可选）
-const INTERVAL_MINUTES = 20
-setInterval(
-  async () => {
-    console.log(`执行舰队任务 ${new Date().toLocaleTimeString()}`)
-    await operator.sendFleet(fleet)
-  },
-  1000 * 60 * INTERVAL_MINUTES,
-)
+// 封装发送舰队函数
+const sendFleet = async () => {
+  // 执行舰队任务
+  console.log(`执行舰队任务 ${new Date().toLocaleTimeString()}`)
+  await operator.sendFleet(fleet)
+  console.log('舰队已派出！')
+}
+
+// 先执行一次
+sendFleet()
+
+// 每5分钟执行一次
+setInterval(sendFleet, 1000 * 60 * 5)
