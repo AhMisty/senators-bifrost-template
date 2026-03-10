@@ -40,7 +40,6 @@ pnpm install
 ### Write Scripts
 
 The default entry point is `src/main.ts`. You can refer to the examples in the `src/example` directory and directly edit the `src/main.ts` file.
-When creating an `Operator`, remember to create a `Config` instance and pass it as the fifth argument.
 
 ### Run Scripts
 
