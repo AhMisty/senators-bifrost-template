@@ -7,7 +7,7 @@
     "perf": "warn"
   },
   "rules": {
-    "no-console": "warn",
+    "no-console": "allow",
     "no-debugger": "error",
     "no-unused-vars": "warn",
     "no-undef": "allow",

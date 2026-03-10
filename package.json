@@ -1,6 +1,6 @@
 {
   "name": "@senators/bifrost-template",
-  "version": "1.1.1",
+  "version": "1.1.5",
   "private": false,
   "description": "A template for Bifrost, making your interstellar journey easier!",
   "keywords": [
@@ -21,18 +21,6 @@
   },
   "author": "AhMisty",
   "type": "module",
-  "files": [
-    "./out",
-    "./docs",
-    "README.md",
-    "LICENSE"
-  ],
-  "exports": {
-    ".": {
-      "types": "./out/main.d.ts",
-      "default": "./out/main.js"
-    }
-  },
   "devDependencies": {
     "@types/node": "latest",
     "git-cz": "latest",

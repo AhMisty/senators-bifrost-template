@@ -28,13 +28,13 @@ const fleet = new Fleet({
 })
 
 // 监听发送舰队错误事件
-operator.onSendFleetStep1Invalid = async (operator, fleet, allyContent) => {
+operator.onSendFleetStep1Invalid = async (_operator, _fleet, allyContent) => {
   console.error(`步骤1出现错误: ${allyContent}`)
 }
-operator.onSendFleetStep2Invalid = async (operator, fleet, allyContent) => {
+operator.onSendFleetStep2Invalid = async (_operator, _fleet, allyContent) => {
   console.error(`步骤2出现错误: ${allyContent}`)
 }
-operator.onSendFleetStep3Invalid = async (operator, fleet, allyContent) => {
+operator.onSendFleetStep3Invalid = async (_operator, _fleet, allyContent) => {
   console.error(`步骤3出现错误: ${allyContent}`)
 }
 
