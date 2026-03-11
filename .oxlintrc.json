@@ -1,4 +1,5 @@
 {
+  "ignorePatterns": ["out/**", "node_modules/**"],
   "categories": {
     "correctness": "error",
     "suspicious": "warn",
