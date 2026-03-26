@@ -48,7 +48,7 @@ const sendFleet = async () => {
 }
 
 // 先执行一次
-sendFleet()
+await sendFleet()
 
 // 每5分钟执行一次
 setInterval(sendFleet, 1000 * 60 * 5)

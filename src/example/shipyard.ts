@@ -1,4 +1,4 @@
-import { Operator, Courier, Config, Elements } from '@senators/bifrost'
+import { Operator, Courier, Config, Elements, PlanetType } from '@senators/bifrost'
 
 // 初始化配置和客户端
 const config = new Config()
@@ -14,7 +14,7 @@ await operator.update()
 const planet = operator.planets.map.get(114514)
 
 // 检查星球是否存在且为行星
-if (planet && planet.type === 1) {
+if (planet && planet.type === PlanetType.Planet) {
   // 获取id=114514的舰船数量
   const currentCount = planet.elements.get(114514)
   // 获取id=114514的舰船队列
@@ -26,6 +26,6 @@ if (planet && planet.type === 1) {
     const diffCount = 1000 - totalCount
     const ships = new Elements()
     ships.set(114514, diffCount)
-    operator.buildShipyard(planet.id, ships)
+    await operator.buildShipyard(planet.id, ships)
   }
 }
