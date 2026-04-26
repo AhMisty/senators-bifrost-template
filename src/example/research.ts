@@ -26,7 +26,7 @@ const queue = operator.queues.research
 // 如果研究114514的等级小于10，且研究队列中研究114514的最后一个值小于10，则从id=1的星球升级1级
 if (level < 10 && queue.getLastCount(114514) < 10) {
   await operator.buildResearch({
-    cp: 1,
+    planetId: 1,
     element: 114514,
     count: 1,
   })

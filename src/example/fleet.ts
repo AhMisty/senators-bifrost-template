@@ -32,11 +32,13 @@ ships.set(210, 99999) // 设置舰船210，数量99999艘
 
 // 创建舰队任务
 const fleet = new Fleet({
-  cp: 1, // 起点星球ID
-  galaxy: 1, // 目标河系
-  system: 1, // 目标星系
-  planet: 1, // 目标星球
-  type: PlanetType.Planet, // 星球类型：1=行星
+  origin: 1, // 起点星球ID
+  target: {
+    galaxy: 1, // 目标河系
+    system: 1, // 目标星系
+    planet: 1, // 目标星球
+    type: PlanetType.Planet, // 星球类型：1=行星
+  },
   mission: FleetMission.Expedit, // 任务类型：15=探险
   speed: FleetSpeed.Ten, // 速度：10=最快
   staytime: FleetStaytime.One, // 停留时间：1小时

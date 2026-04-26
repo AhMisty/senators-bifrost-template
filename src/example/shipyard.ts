@@ -36,7 +36,7 @@ if (planet && planet.type === PlanetType.Planet) {
     const ships = new Elements()
     ships.set(114514, diffCount)
     await operator.buildShipyard({
-      cp: planet.id,
+      planetId: planet.id,
       elements: ships,
     })
   }

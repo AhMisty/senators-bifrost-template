@@ -31,7 +31,7 @@ if (planet && planet.type === PlanetType.Planet) {
   // 如果建筑114514的等级小于10，且建造队列中建筑114514的最后一个值小于10，则升级1级
   if (level < 10 && queue.getLastCount(114514) < 10) {
     await operator.buildBuilding({
-      cp: planet.id,
+      planetId: planet.id,
       element: 114514,
       count: 1,
     })

@@ -41,6 +41,33 @@ pnpm install
 
 The default entry point is `src/index.ts`. You can refer to the examples in the `src/example` directory and directly edit the `src/index.ts` file.
 
+### Bifrost Function Conventions
+
+This template follows the `@senators/bifrost` 2.1.x function conventions:
+
+- Planet operation APIs use `planetId`, such as `buildBuilding({ planetId, element, count })`, `buildResearch({ planetId, element, count })`, and `buildShipyard({ planetId, elements })`.
+- Planet refresh APIs accept either `updatePlanet({ planetId })` or `updatePlanet({ planet })`.
+- Fleet tasks use `origin` for the starting planet and a nested `target` object for destination coordinates:
+
+```typescript
+const fleet = new Fleet({
+  origin: 1,
+  target: {
+    galaxy: 1,
+    system: 1,
+    planet: 1,
+    type: PlanetType.Planet,
+  },
+  mission: FleetMission.Expedit,
+  speed: FleetSpeed.Ten,
+  staytime: FleetStaytime.One,
+  metal: 0,
+  crystal: 0,
+  deuterium: 0,
+  ships,
+})
+```
+
 ### Run Scripts
 
 ```bash
