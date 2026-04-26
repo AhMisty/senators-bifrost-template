@@ -2,10 +2,19 @@ import { Operator, Courier, Config, Elements, PlanetType } from '@senators/bifro
 
 // 初始化配置和客户端
 const config = new Config()
-const courier = new Courier('https://example.com', 10000)
+const courier = new Courier({
+  base: 'https://example.com',
+  timeout: 10000,
+})
 
 // 创建操作员
-const operator = new Operator(1, 'username', 'password', courier, config)
+const operator = new Operator({
+  universe: 1,
+  username: 'username',
+  password: 'password',
+  courier,
+  config,
+})
 
 // 更新游戏数据
 await operator.update()
@@ -26,6 +35,9 @@ if (planet && planet.type === PlanetType.Planet) {
     const diffCount = 1000 - totalCount
     const ships = new Elements()
     ships.set(114514, diffCount)
-    await operator.buildShipyard(planet.id, ships)
+    await operator.buildShipyard({
+      cp: planet.id,
+      elements: ships,
+    })
   }
 }

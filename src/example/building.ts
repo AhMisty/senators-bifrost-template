@@ -2,10 +2,19 @@ import { Operator, Courier, Config, PlanetType } from '@senators/bifrost'
 
 // 初始化配置和客户端
 const config = new Config()
-const courier = new Courier('https://example.com', 10000)
+const courier = new Courier({
+  base: 'https://example.com',
+  timeout: 10000,
+})
 
 // 创建操作员
-const operator = new Operator(1, 'username', 'password', courier, config)
+const operator = new Operator({
+  universe: 1,
+  username: 'username',
+  password: 'password',
+  courier,
+  config,
+})
 
 // 更新游戏数据
 await operator.update()
@@ -21,6 +30,10 @@ if (planet && planet.type === PlanetType.Planet) {
   const queue = planet.queues.building
   // 如果建筑114514的等级小于10，且建造队列中建筑114514的最后一个值小于10，则升级1级
   if (level < 10 && queue.getLastCount(114514) < 10) {
-    await operator.buildBuilding(planet.id, 114514, 1)
+    await operator.buildBuilding({
+      cp: planet.id,
+      element: 114514,
+      count: 1,
+    })
   }
 }

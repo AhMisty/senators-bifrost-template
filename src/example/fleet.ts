@@ -1,11 +1,30 @@
-import { Operator, Courier, Config, Fleet, Elements } from '@senators/bifrost'
+import {
+  Operator,
+  Courier,
+  Config,
+  Fleet,
+  Elements,
+  FleetMission,
+  FleetSpeed,
+  FleetStaytime,
+  PlanetType,
+} from '@senators/bifrost'
 
 // 初始化配置和客户端
 const config = new Config()
-const courier = new Courier('https://example.com', 10000)
+const courier = new Courier({
+  base: 'https://example.com',
+  timeout: 10000,
+})
 
 // 创建操作员
-const operator = new Operator(1, 'username', 'password', courier, config)
+const operator = new Operator({
+  universe: 1,
+  username: 'username',
+  password: 'password',
+  courier,
+  config,
+})
 
 // 配置舰队
 const ships = new Elements()
@@ -17,10 +36,10 @@ const fleet = new Fleet({
   galaxy: 1, // 目标河系
   system: 1, // 目标星系
   planet: 1, // 目标星球
-  type: 1, // 星球类型：1=行星
-  mission: 15, // 任务类型：15=探险
-  speed: 10, // 速度：10=最快
-  staytime: 1, // 停留时间：1小时
+  type: PlanetType.Planet, // 星球类型：1=行星
+  mission: FleetMission.Expedit, // 任务类型：15=探险
+  speed: FleetSpeed.Ten, // 速度：10=最快
+  staytime: FleetStaytime.One, // 停留时间：1小时
   metal: 0, // 金属：0
   crystal: 0, // 晶体：0
   deuterium: 0, // 重氢：0
@@ -28,13 +47,13 @@ const fleet = new Fleet({
 })
 
 // 监听发送舰队错误事件
-operator.onSendFleetStep1Invalid = async (_operator, _fleet, allyContent) => {
+operator.onSendFleetStep1Invalid = async ({ allyContent }) => {
   console.error(`步骤1出现错误: ${allyContent}`)
 }
-operator.onSendFleetStep2Invalid = async (_operator, _fleet, allyContent) => {
+operator.onSendFleetStep2Invalid = async ({ allyContent }) => {
   console.error(`步骤2出现错误: ${allyContent}`)
 }
-operator.onSendFleetStep3Invalid = async (_operator, _fleet, allyContent) => {
+operator.onSendFleetStep3Invalid = async ({ allyContent }) => {
   console.error(`步骤3出现错误: ${allyContent}`)
 }
 
