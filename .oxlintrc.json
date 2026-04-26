@@ -17,10 +17,5 @@
     "no-dupe-keys": "warn",
     "eqeqeq": ["error", "always"],
     "no-await-in-loop": "allow"
-  },
-  "globals": {
-    "fetch": "readonly",
-    "defineProps": "readonly",
-    "chrome": "readonly"
   }
 }

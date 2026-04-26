@@ -39,7 +39,7 @@ pnpm install
 
 ### 编写脚本
 
-在默认入口是 `src/main.ts`，你可以参照 `src/example` 目录下的示例，直接编辑 `src/main.ts` 文件。
+在默认入口是 `src/index.ts`，你可以参照 `src/example` 目录下的示例，直接编辑 `src/index.ts` 文件。
 
 ### 运行脚本
 

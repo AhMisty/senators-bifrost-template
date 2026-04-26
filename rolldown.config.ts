@@ -3,7 +3,7 @@ import { dts } from 'rolldown-plugin-dts'
 
 export default defineConfig([
   {
-    input: './src/main.ts',
+    input: './src/index.ts',
     platform: 'node',
     plugins: [
       dts({

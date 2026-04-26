@@ -39,7 +39,7 @@ pnpm install
 
 ### Write Scripts
 
-The default entry point is `src/main.ts`. You can refer to the examples in the `src/example` directory and directly edit the `src/main.ts` file.
+The default entry point is `src/index.ts`. You can refer to the examples in the `src/example` directory and directly edit the `src/index.ts` file.
 
 ### Run Scripts
 
