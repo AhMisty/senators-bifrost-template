@@ -41,33 +41,6 @@ pnpm install
 
 在默认入口是 `src/index.ts`，你可以参照 `src/example` 目录下的示例，直接编辑 `src/index.ts` 文件。
 
-### Bifrost 函数约定
-
-当前模板遵循 `@senators/bifrost` 2.1.x 的函数约定：
-
-- 星球操作 API 使用 `planetId`，例如 `buildBuilding({ planetId, element, count })`、`buildResearch({ planetId, element, count })`、`buildShipyard({ planetId, elements })`。
-- 星球刷新 API 可传入 `updatePlanet({ planetId })` 或 `updatePlanet({ planet })`。
-- 舰队任务使用 `origin` 表示起点星球，使用嵌套的 `target` 对象表示目标坐标：
-
-```typescript
-const fleet = new Fleet({
-  origin: 1,
-  target: {
-    galaxy: 1,
-    system: 1,
-    planet: 1,
-    type: PlanetType.Planet,
-  },
-  mission: FleetMission.Expedit,
-  speed: FleetSpeed.Ten,
-  staytime: FleetStaytime.One,
-  metal: 0,
-  crystal: 0,
-  deuterium: 0,
-  ships,
-})
-```
-
 ### 运行脚本
 
 ```bash
