@@ -1,6 +1,6 @@
 {
   "name": "@senators/bifrost-template",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "private": false,
   "description": "A template for Bifrost, making your interstellar journey easier!",
   "keywords": [
@@ -43,7 +43,8 @@
     "oxlint": "latest",
     "oxlint-tsgolint": "latest",
     "rolldown": "latest",
-    "rolldown-plugin-dts": "latest"
+    "rolldown-plugin-dts": "latest",
+    "@senators/bifrost": "latest"
   },
   "scripts": {
     "start-ts": "node ./src/index.ts",
@@ -59,8 +60,5 @@
     "build-only": "rolldown -c rolldown.config.ts",
     "build": "run-s check build-only",
     "push": "run-s build && npm publish --access public"
-  },
-  "dependencies": {
-    "@senators/bifrost": "latest"
   }
 }
