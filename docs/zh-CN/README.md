@@ -99,5 +99,5 @@ npm run fmt
 ---
 
 <div align="center">
-  <p>使用 <a href="https://github.com/rolldown/rolldown">Rolldown</a> 构建 | © 2025 Bifrost 项目</p>
+  <p>使用 <a href="https://github.com/rolldown/rolldown">Rolldown</a> 构建 | © 2026 Bifrost 项目</p>
 </div>

@@ -99,5 +99,5 @@ For questions or suggestions, please submit a [GitHub Issue](https://github.com/
 ---
 
 <div align="center">
-  <p>Built with <a href="https://github.com/rolldown/rolldown">Rolldown</a> | © 2025 Bifrost Project</p>
+  <p>Built with <a href="https://github.com/rolldown/rolldown">Rolldown</a> | © 2026 Bifrost Project</p>
 </div>
