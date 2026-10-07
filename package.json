@@ -1,0 +1,49 @@
+{
+  "name": "@senators/bifrost-template",
+  "version": "7.0.0",
+  "description": "An ESM TypeScript script template for the New-Star server using Bifrost.",
+  "keywords": [
+    "@senators/bifrost-template",
+    "senators",
+    "bifrost",
+    "ogame"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/AhMisty/senators-bifrost-template",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AhMisty/senators-bifrost-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AhMisty/senators-bifrost-template/issues",
+    "email": "AhMisty@outlook.com"
+  },
+  "author": "AhMisty",
+  "type": "module",
+  "engines": {
+    "node": ">=26"
+  },
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "@senators/bifrost": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "npm-run-all2": "^9.0.3",
+    "oxfmt": "^0.72.0",
+    "oxlint": "^1.87.0",
+    "oxlint-tsgolint": "^7.0.2003"
+  },
+  "scripts": {
+    "start": "node ./src/index.ts",
+    "lint": "oxlint . --fix --type-aware --type-check --ignore-path .gitignore",
+    "fmt": "oxfmt . --write --ignore-path .gitignore",
+    "test": "node --test --experimental-test-coverage --test-coverage-include-all --test-coverage-include=src/** --test-coverage-lines=100 --test-coverage-branches=100 --test-coverage-functions=100",
+    "check": "run-s lint fmt test",
+    "test:package": "node --test tests/package.ts",
+    "prepack": "run-s check test:package",
+    "release": "npm publish --access public"
+  }
+}
